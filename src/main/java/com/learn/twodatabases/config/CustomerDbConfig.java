@@ -28,7 +28,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "customerEntityManagerFactory",
         transactionManagerRef = "customerTransactionManager",
-        basePackages = {"com.learn.twodatabases.repository.customerdb"})
+        basePackages = {"com.learn.twodatabases.repository.customerdb"})//this should have the package of repositories related to this particular db
 public class CustomerDbConfig {
 
     @Bean(name = "customerDataSource")
@@ -44,7 +44,7 @@ public class CustomerDbConfig {
         return builder
                 .dataSource(dataSource)
                 .packages("com.learn.twodatabases.entity.customerdb")//here it defines the package that include the entities relevant to this particular data source
-                .persistenceUnit("customerPersistenceUnit")
+                .persistenceUnit("customerPersistenceUnit")//this should be a unique name
                 .build();
     }
 
