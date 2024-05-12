@@ -2,7 +2,7 @@ package com.learn.twodatabases.entity;
 
 import jakarta.persistence.*;
 
-@Table
+@Table(name = "customer")
 @Entity
 public class Customer {
 
@@ -14,7 +14,7 @@ public class Customer {
     private String contactNumber;
 
     public Customer(){
-
+        // Default constructor is needed to JPA
     }
 
     public Customer(int customerId, String name, String city, String contactNumber) {

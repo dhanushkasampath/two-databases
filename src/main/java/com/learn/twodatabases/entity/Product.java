@@ -2,7 +2,7 @@ package com.learn.twodatabases.entity;
 
 import jakarta.persistence.*;
 
-@Table
+@Table(name = "product")
 @Entity
 public class Product {
 
@@ -13,7 +13,9 @@ public class Product {
     private String serialNumber;
     private String manufacturedCountry;
 
-    public Product(){}
+    public Product(){
+        // Default constructor is needed to JPA
+    }
 
     public Product(int productId, String name, String serialNumber, String manufacturedCountry) {
         this.productId = productId;
