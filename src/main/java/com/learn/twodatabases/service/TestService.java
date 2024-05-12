@@ -1,9 +1,9 @@
 package com.learn.twodatabases.service;
 
-import com.learn.twodatabases.entity.Customer;
-import com.learn.twodatabases.entity.Product;
-import com.learn.twodatabases.repository.CustomerRepository;
-import com.learn.twodatabases.repository.ProductRepository;
+import com.learn.twodatabases.entity.customerdb.Customer;
+import com.learn.twodatabases.entity.productdb.Product;
+import com.learn.twodatabases.repository.customerdb.CustomerRepository;
+import com.learn.twodatabases.repository.productdb.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

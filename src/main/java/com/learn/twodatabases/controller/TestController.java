@@ -1,7 +1,7 @@
 package com.learn.twodatabases.controller;
 
-import com.learn.twodatabases.entity.Customer;
-import com.learn.twodatabases.entity.Product;
+import com.learn.twodatabases.entity.customerdb.Customer;
+import com.learn.twodatabases.entity.productdb.Product;
 import com.learn.twodatabases.service.TestService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
-package com.learn.twodatabases.repository;
+package com.learn.twodatabases.repository.customerdb;
 
-import com.learn.twodatabases.entity.Customer;
+import com.learn.twodatabases.entity.customerdb.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

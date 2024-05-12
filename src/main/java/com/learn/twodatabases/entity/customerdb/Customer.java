@@ -1,14 +1,14 @@
-package com.learn.twodatabases.entity;
+package com.learn.twodatabases.entity.customerdb;
 
 import jakarta.persistence.*;
 
-@Table(name = "customer")
 @Entity
+@Table(name = "customer")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    private Integer customerId;
     private String name;
     private String city;
     private String contactNumber;

@@ -29,7 +29,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "productEntityManagerFactory",
         transactionManagerRef = "productTransactionManager",
-        basePackages = {"-com.learn.twodatabases.repository"})
+        basePackages = {"com.learn.twodatabases.repository.productdb"})
 public class ProductDbConfig {
 
     @Primary
@@ -43,7 +43,10 @@ public class ProductDbConfig {
     @Bean(name = "productEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean productEntityManagerFactory(
             EntityManagerFactoryBuilder builder, @Qualifier("productDataSource") DataSource dataSource) {
-        return builder.dataSource(dataSource).packages("com.learn.twodatabases.entity").persistenceUnit("product")
+        return builder
+                .dataSource(dataSource)
+                .packages("com.learn.twodatabases.entity.productdb")
+                .persistenceUnit("productPersistenceUnit")
                 .build();
     }
 

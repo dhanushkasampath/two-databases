@@ -1,14 +1,14 @@
-package com.learn.twodatabases.entity;
+package com.learn.twodatabases.entity.productdb;
 
 import jakarta.persistence.*;
 
-@Table(name = "product")
 @Entity
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int productId;
+    private Integer productId;
     private String name;
     private String serialNumber;
     private String manufacturedCountry;

@@ -28,7 +28,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "customerEntityManagerFactory",
         transactionManagerRef = "customerTransactionManager",
-        basePackages = {"com.learn.twodatabases.repository"})
+        basePackages = {"com.learn.twodatabases.repository.customerdb"})
 public class CustomerDbConfig {
 
     @Bean(name = "customerDataSource")
@@ -40,7 +40,11 @@ public class CustomerDbConfig {
     @Bean(name = "customerEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean customerEntityManagerFactory(
             EntityManagerFactoryBuilder builder, @Qualifier("customerDataSource") DataSource dataSource) {
-        return builder.dataSource(dataSource).packages("com.learn.twodatabases.entity").persistenceUnit("customer")
+
+        return builder
+                .dataSource(dataSource)
+                .packages("com.learn.twodatabases.entity.customerdb")//here it defines the package that include the entities relevant to this particular data source
+                .persistenceUnit("customerPersistenceUnit")
                 .build();
     }
 
