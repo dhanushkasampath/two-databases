@@ -1,7 +1,15 @@
 package com.learn.twodatabases.entity.productdb;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "product")
 public class Product {
@@ -13,46 +21,10 @@ public class Product {
     private String serialNumber;
     private String manufacturedCountry;
 
-    public Product(){
-        // Default constructor is needed to JPA
-    }
-
     public Product(int productId, String name, String serialNumber, String manufacturedCountry) {
         this.productId = productId;
         this.name = name;
         this.serialNumber = serialNumber;
-        this.manufacturedCountry = manufacturedCountry;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-    public String getManufacturedCountry() {
-        return manufacturedCountry;
-    }
-
-    public void setManufacturedCountry(String manufacturedCountry) {
         this.manufacturedCountry = manufacturedCountry;
     }
 }
